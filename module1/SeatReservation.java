@@ -21,11 +21,11 @@ public class SeatReservation {
         return flightDesignator;
     }
 
-    public void setFlightDesignator(String fd) {
-        if (fd.length() < 4 || fd.length() > 6) {
-            throw new IllegalArgumentException("FFlight Designator must have 4-6 characters.");
+    public void setFlightDesignator(String flightDesignator) {
+        if (flightDesignator.length() < 4 || flightDesignator.length() > 6) {
+            throw new IllegalArgumentException("Flight Designator must have 4-6 characters.");
         }
-        this.flightDesignator = fd;
+        this.flightDesignator = flightDesignator;
     }
 
     public LocalDate getFlightDate() {
