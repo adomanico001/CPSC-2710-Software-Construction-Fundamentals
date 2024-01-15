@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class SeatReservation {
     // Instance variables
     private String flightDesignator;
-    private LocalDate flightDate;
+    private java.time.LocalDate flightDate;
     private String firstName;
     private String lastName;
 
@@ -23,9 +23,9 @@ public class SeatReservation {
 
     public void setFlightDesignator(String flightDesignator) {
         if (flightDesignator == null)
-           throw new IllegalArgumentException("flight designator cannot be null");
+            throw new IllegalArgumentException("flight designator cannot be null");
         this.flightDesignator = flightDesignator;
-     }
+    }
 
     public LocalDate getFlightDate() {
         return flightDate;
