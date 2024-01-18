@@ -58,8 +58,8 @@ public class SeatReservation {
     }
 
     public String toString() {
-        return "SeatReservation{" + "flightDesignator=" + flightDesignator + ", flightDate=" +
-                flightDate + ", firstName=" + (firstName != null ? "\"" + firstName + "\"" : "null") +
-                ", lastName=" + (lastName != null ? "\"" + lastName + "\"" : "null") + '}';
+        return String.format("SeatReservation{flightDesignator=%s, flightDate=%s, firstName=%s, lastName=%s}",
+                flightDesignator, flightDate, firstName != null ? "\"" + firstName + "\"" : "null",
+                lastName != null ? "\"" + lastName + "\"" : "null");
     }
 }
