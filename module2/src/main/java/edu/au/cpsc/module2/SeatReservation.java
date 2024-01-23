@@ -1,12 +1,10 @@
-/**
- * A program for an airline reservation management system.
- * Module 2 Assignment
- * 
- * @author - Addie Domanico - CPSC 2710 - AO1
- * @version - 01/22/2024
- */
+// @author: Addie Domanico - CPSC 2710 - AO1
+// @version: 01/22/2024
+// Module 2 Assignment
 
- import java.time.LocalDate;
+package edu.au.cpsc.demo;
+
+import java.time.LocalDate;
 
 public class SeatReservation {
     // Instance variables
@@ -19,58 +17,72 @@ public class SeatReservation {
 
     // Getters and setters
     public String getFlightDesignator() {
+
         return flightDesignator;
     }
 
     public void setFlightDesignator(String flightDesignator) {
         if (flightDesignator == null) {
-            throw new IllegalArgumentException("flight designator cannot be null");
+            throw new IllegalArgumentException("Flight designator cannot be null");
         }
-        if (flightDesignator.length() < || flightDesignator() > 6) {
+        if (flightDesignator.length() < 4 || flightDesignator.length() > 6) {
             throw new IllegalArgumentException("Flight designator must be 4-6 characters");
         }
         this.flightDesignator = flightDesignator;
     }
 
     public LocalDate getFlightDate() {
+
         return flightDate;
     }
 
     public void setFlightDate(LocalDate date) {
+
         this.flightDate = date;
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public void setFirstName(String fn) {
+
         this.firstName = fn;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
     public void setLastName(String ln) {
+
         this.lastName = ln;
     }
 
     public int getNumberOfBags() {
+
         return numberOfBags;
     }
 
     public void setNumberOfBags(int numberOfBags) {
+
         this.numberOfBags = numberOfBags;
     }
 
     public boolean isFlyingWithInfant() {
+
         return flyingWithInfant;
     }
+
     public void makeFlyingWithInfant() {
+
         this.flyingWithInfant = true;
     }
+
     public void makeNotFlyingWithInfant() {
+
         this.flyingWithInfant = false;
     }
 
@@ -80,3 +92,4 @@ public class SeatReservation {
                 lastName != null ? "\"" + lastName + "\"" : "null", numberOfBags, flyingWithInfant);
     }
 }
+
