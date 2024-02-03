@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.au.cpsc.module4.FlightScheduleApplicationController">
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.au.cpsc.module4.FlightScheduleApplicationController">
     <top>
         <fx:include fx:id="flightScheduleTableViewController" source="flight-schedule-table-view.fxml" />
     </top>

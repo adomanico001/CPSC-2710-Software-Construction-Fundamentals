@@ -55,6 +55,7 @@ public class FlightScheduleTableViewController {
     }
 
     public void select(ScheduledFlight flight) {
+
         flightTableView.getSelectionModel().select(flight);
     }
 
