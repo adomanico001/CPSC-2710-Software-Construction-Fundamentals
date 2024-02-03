@@ -9,4 +9,8 @@
         <TableColumn fx:id="arrivalAirportColumn" prefWidth="125.0" text="Arrival Airport" />
         <TableColumn fx:id="daysOfWeekColumn" prefWidth="125.0" text="Days of Week" />
     </columns>
+<<<<<<< HEAD
 </TableView>
+=======
+</TableView>
+>>>>>>> f9a6405b92ac6332f6305f503cf4907e64b2538f
