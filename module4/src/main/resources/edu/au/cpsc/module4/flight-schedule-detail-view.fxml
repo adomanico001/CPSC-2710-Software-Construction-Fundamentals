@@ -1,12 +1,15 @@
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="flightScheduledDetailView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="350.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.au.cpsc.module4.FlightScheduleDetailViewController">
+<GridPane fx:id="flightScheduledDetailView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module4.FlightScheduleDetailViewController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="175.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="175.0" />
@@ -39,18 +42,38 @@
         <TextField fx:id="arrivalAirportTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <children>
-                <ToggleButton fx:id="sundayButton" mnemonicParsing="false" text="U" />
-                <ToggleButton fx:id="mondayButton" mnemonicParsing="false" text="M" />
-                <ToggleButton fx:id="tuesdayButton" mnemonicParsing="false" text="T" />
-                <ToggleButton fx:id="wednesdayButton" mnemonicParsing="false" text="W" />
-                <ToggleButton fx:id="thursdayButton" mnemonicParsing="false" text="R" />
-                <ToggleButton fx:id="fridayButton" mnemonicParsing="false" text="F" />
-                <ToggleButton fx:id="saturdayButton" mnemonicParsing="false" text="S" />
+                <ToggleButton fx:id="sundayButton" ellipsisString="" mnemonicParsing="false" text="U" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets left="2.0" right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="mondayButton" ellipsisString="" mnemonicParsing="false" text="M" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="tuesdayButton" mnemonicParsing="false" text="T">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="wednesdayButton" mnemonicParsing="false" text="W" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="thursdayButton" mnemonicParsing="false" text="R">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="fridayButton" mnemonicParsing="false" text="F">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="saturdayButton" mnemonicParsing="false" text="S">
+               <HBox.margin>
+                  <Insets top="1.0" />
+               </HBox.margin></ToggleButton>
             </children>
+         <GridPane.margin>
+            <Insets right="2.0" />
+         </GridPane.margin>
         </HBox>
     </children>
-<<<<<<< HEAD
 </GridPane>
-=======
-</GridPane>
->>>>>>> f9a6405b92ac6332f6305f503cf4907e64b2538f
