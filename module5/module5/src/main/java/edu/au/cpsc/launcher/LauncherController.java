@@ -1,2 +1,4 @@
-package edu.au.cpsc.launcher;public class LauncherController {
+package edu.au.cpsc.launcher;
+
+public class LauncherController {
 }

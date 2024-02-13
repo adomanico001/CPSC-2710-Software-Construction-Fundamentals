@@ -1,0 +1,57 @@
+/*
+* A program that launches four airport-themed buttons.
+* Module 5 Launcher CSS file
+*
+* @author Addie Domanico - CPSC2710 - AO1
+* @version 02/12/2024
+ */
+
+@font-face {
+    font-family: "Andale Mono";
+    src: url(../font/AndaleMono.ttf);
+}
+
+#airports-btn {
+    -fx-background-image: url(../images/airports.png);
+    -fx-font-family: "Andale Mono";
+    -fx-font-size: 30pt;
+    -fx-background-size: 200px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    width: 300px;
+    height: 300px;
+}
+
+
+#seat-reservation-btn {
+    -fx-background-image: url(../images/seatreservation.png);
+    -fx-font-family: "Andale Mono";
+    -fx-font-size: 20pt;
+    -fx-background-size: 150px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    width: 400px;
+    height: 400px;
+}
+
+#flight-schedule-btn {
+    -fx-background-image: url(../images/schedule.png);
+    -fx-font-family: "Andale Mono";
+    -fx-font-size: 30pt;
+    -fx-background-size: 200px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    width: 300px;
+    height: 300px;
+}
+
+#aircraft-btn {
+    -fx-background-image: url(../images/aircraft.png);
+    -fx-font-family: "Andale Mono";
+    -fx-font-size: 30pt;
+    -fx-background-size: 200px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    width: 300px;
+    height: 300px;
+}
