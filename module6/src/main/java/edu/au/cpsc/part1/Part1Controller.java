@@ -1,3 +1,11 @@
+/*
+* A program that demonstrates the use of properties.
+* Module 6 - Controller file
+*
+* @author Addie Domanico - CPSC2710 - AO1
+* @version 02/18/2024
+ */
+
 package edu.au.cpsc.part1;
 
 import javafx.beans.binding.Bindings;
