@@ -33,5 +33,9 @@ public class Part1Controller {
 
   public void initialize() {
     // your bindings go here
+    echoTextField.textProperty().bind(messageTextField.textProperty());
+    firstBidirectionalTextField.textProperty().bindBidirectional(secondBidirectionalTextField.textProperty());
+    secretOverlayImageView.opacityProperty().bind(secretSlider.valueProperty());
+    
   }
 }
