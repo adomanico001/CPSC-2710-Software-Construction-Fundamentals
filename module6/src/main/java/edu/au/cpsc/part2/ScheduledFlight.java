@@ -1,8 +1,8 @@
 /**
- * A program with the capability to edit airline flight information.
- * Module 4 Project
+ * A program with the capability to modify airline flight information.
+ * Module 6 Project
  * @author - Addie Domanico - CPSC2710 - AO1
- * @version - 02/04/2024
+ * @version - 02/18/2024
  */
 
 package edu.au.cpsc.part2;

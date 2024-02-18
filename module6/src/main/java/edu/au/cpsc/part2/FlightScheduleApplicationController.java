@@ -1,16 +1,28 @@
 /**
- * A program with the capability to edit airline flight information.
- * Module 4 Project - Application Controller file
+ * A program with the capability to modify airline flight information.
+ * Module 6 Project - Controller file
  * @author - Addie Domanico - CPSC2710 - AO1
- * @version - 02/04/2024
+ * @version - 02/18/2024
  */
 
 package edu.au.cpsc.part2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import edu.au.cpsc.part2.uimodel.FlightDetailModel;
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.MenuItem;
 
 public class FlightScheduleApplicationController {
+
+    @FXML
+    private Parent applicationRoot;
+
     @FXML
     private FlightScheduleTableViewController flightScheduleTableViewController;
 
@@ -18,37 +30,63 @@ public class FlightScheduleApplicationController {
     private FlightScheduleDetailViewController flightScheduleDetailViewController;
 
     @FXML
-    private Button updateButton;
+    private Button updateButton, newButton, deleteButton;
 
-    private ScheduledFlight flightEdited;
-    private boolean flightEditedIsNew;
+    @FXML
+    private MenuItem updateMenuItem, newMenuItem, deleteMenuItem;
 
     public void initialize() {
         flightScheduleTableViewController.showFlights(Db.getDatabase().getScheduledFlights());
         flightScheduleTableViewController.onFlightSelectionChanged(
                 event -> showFlight(event.getSelectedFlight()));
+        FlightDetailModel uiModel = flightScheduleDetailViewController.getModel();
+        bindButtonMenuEnable(uiModel);
+        bindButtonMenuLabel(uiModel);
         showFlight(null);
+    }
+    private void bindButtonMenuEnable(FlightDetailModel uiModel) {
+        updateButton.disabledProperty().bind(uiModel.modifiedProperty().not());
+        updateMenuItem.disableProperty().bind(uiModel.modifiedProperty().not());
+        newButton.disabledProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
+        newMenuItem.disableProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
+        deleteButton.disabledProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
     }
 
     private void showFlight(ScheduledFlight flight) {
         flightScheduleDetailViewController.showFlight(flight);
-        flightEdited = flight == null ? new ScheduledFlight() : flight;
-        flightEditedIsNew = flight == null;
-        String buttonLabel = flightEditedIsNew ? "Add" : "Update";
-        updateButton.setText(buttonLabel);
     }
 
     @FXML
     protected void updateButtonAction() {
-        flightScheduleDetailViewController.updateFlight(flightEdited);
-        if (flightEditedIsNew) {
-            Db.getDatabase().addScheduledFlight(flightEdited);
+        if (flightScheduleDetailViewController.getModel().isNew()) {
+            addScheduledFlight();
         } else {
-            Db.getDatabase().updateScheduledFlight(flightEdited);
+            updateScheduledFlight();
         }
+    }
+
+    private void addScheduledFlight() {
+        ScheduledFlight flight = new ScheduledFlight("", "", "");
+        if (!flightScheduleDetailViewController.updateFlight(flight)) {
+            return;
+        }
+        Db.getDatabase().addScheduledFlight(flight);
+        saveDatabaseAndUpdateTable(flight);
+    }
+
+    private void updateScheduledFlight() {
+        ScheduledFlight flight = getScheduledFlightBeingEdited();
+        if (!flightScheduleDetailViewController.updateFlight(flight)) {
+            return;
+        }
+        Db.getDatabase().updateScheduledFlight(flight);
+        saveDatabaseAndUpdateTable(flight);
+    }
+
+    private void saveDatabaseAndUpdateTable(ScheduledFlight flight) {
         Db.saveDatabase();
         flightScheduleTableViewController.showFlights(Db.getDatabase().getScheduledFlights());
-        flightScheduleTableViewController.select(flightEdited);
+        flightScheduleTableViewController.select(flight);
     }
 
     @FXML
@@ -58,12 +96,36 @@ public class FlightScheduleApplicationController {
 
     @FXML
     protected void deleteButtonAction() {
-        if (flightEditedIsNew) {
+        if (flightScheduleDetailViewController.getModel().isNew()) {
             flightScheduleTableViewController.select(null);
         } else {
-            Db.getDatabase().removeScheduledFlight(flightEdited);
+            Db.getDatabase().removeScheduledFlight(getScheduledFlightBeingEdited());
             Db.saveDatabase();
             flightScheduleTableViewController.showFlights(Db.getDatabase().getScheduledFlights());
         }
+    }
+
+    @FXML
+    protected void updateMenuAction() {
+        updateButtonAction();
+    }
+
+    @FXML
+    protected void newMenuAction() {
+        newButtonAction();
+    }
+
+    @FXML
+    protected void deleteMenuAction() {
+        deleteButtonAction();
+    }
+
+    @FXML
+    protected void closeMenuAction() {
+        Platform.exit();
+    }
+
+    public ScheduledFlight getScheduledFlightBeingEdited() {
+        return flightScheduleTableViewController.getSelectedFlight();
     }
 }
