@@ -5,7 +5,7 @@
  * @version - 02/04/2024
  */
 
-package edu.au.cpsc.module4;
+package edu.au.cpsc.part2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
