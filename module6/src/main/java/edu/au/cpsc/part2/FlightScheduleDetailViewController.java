@@ -17,6 +17,7 @@ public class FlightScheduleDetailViewController {
     @FXML
     private TextField flightDesignatorTextField, departureAirportTextField, arrivalAirportTextField;
 
+    @FXML
     private Label validationErrorLabel;
 
     private FlightDetailModel model;

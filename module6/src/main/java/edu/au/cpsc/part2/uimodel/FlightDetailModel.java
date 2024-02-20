@@ -64,7 +64,7 @@ public class FlightDetailModel {
     }
 
     public void setDepartureAirportIdent(String departureAirportIdent) {
-        return departureAirportIdentProperty.set(departureAirportIdent);
+        departureAirportIdentProperty.set(departureAirportIdent);
     }
 
     public String getArrivalAirportIdent() {

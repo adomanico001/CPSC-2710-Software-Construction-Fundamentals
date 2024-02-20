@@ -9,6 +9,7 @@ package edu.au.cpsc.part2;
 
 import edu.au.cpsc.part2.ScheduledFlight;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -28,7 +29,11 @@ public class FlightScheduleTableViewController {
     private TableColumn<ScheduledFlight, String> flightDesignatorColumn, departureAirportColumn,
             arrivalAirportColumn, daysOfWeekColumn;
 
+    private final ObservableList<ScheduledFlight> flightList = FXCollections.observableArrayList();
+
     public void initialize() {
+        flightTableView.setItems(flightList);
+
         flightDesignatorColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("flightDesignator"));
         departureAirportColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("departureAirportIdent"));
         arrivalAirportColumn.setCellValueFactory(new PropertyValueFactory<ScheduledFlight, String>("arrivalAirportIdent"));

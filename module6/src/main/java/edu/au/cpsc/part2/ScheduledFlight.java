@@ -8,7 +8,6 @@
 package edu.au.cpsc.part2;
 
 import java.io.Serializable;
-import java.lang.reflect.GenericArrayType;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.HashSet;
@@ -34,7 +33,7 @@ public class ScheduledFlight implements Serializable {
      */
 
     // Constructor
-    public ScheduledFlight() {
+    public ScheduledFlight(String s, String string, String s1) {
         flightDesignator = "";
         departureAirportIdent = "";
         departureTime = java.time.LocalTime.now();

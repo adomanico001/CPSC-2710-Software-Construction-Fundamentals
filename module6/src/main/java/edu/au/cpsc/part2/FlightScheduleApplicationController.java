@@ -7,6 +7,8 @@
 
 package edu.au.cpsc.part2;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import edu.au.cpsc.part2.uimodel.FlightDetailModel;
@@ -35,6 +37,9 @@ public class FlightScheduleApplicationController {
     @FXML
     private MenuItem updateMenuItem, newMenuItem, deleteMenuItem;
 
+    private ObservableList<ScheduledFlight> flightList = FXCollections.observableArrayList();
+
+
     public void initialize() {
         flightScheduleTableViewController.showFlights(Db.getDatabase().getScheduledFlights());
         flightScheduleTableViewController.onFlightSelectionChanged(
@@ -44,12 +49,19 @@ public class FlightScheduleApplicationController {
         bindButtonMenuLabel(uiModel);
         showFlight(null);
     }
+
+    private void bindButtonMenuLabel(FlightDetailModel uiModel) {
+        StringBinding labelProperty = Bindings.when(uiModel.newProperty()).then("Add").otherwise("Update");
+        updateButton.textProperty().bind(labelProperty);
+        updateMenuItem.textProperty().bind(labelProperty);
+    }
+
     private void bindButtonMenuEnable(FlightDetailModel uiModel) {
-        updateButton.disabledProperty().bind(uiModel.modifiedProperty().not());
+        updateButton.disableProperty().bind(uiModel.modifiedProperty().not());
         updateMenuItem.disableProperty().bind(uiModel.modifiedProperty().not());
-        newButton.disabledProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
+        newButton.disableProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
         newMenuItem.disableProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
-        deleteButton.disabledProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
+        deleteButton.disableProperty().bind(uiModel.modifiedProperty().or(uiModel.newProperty()));
     }
 
     private void showFlight(ScheduledFlight flight) {
@@ -66,10 +78,15 @@ public class FlightScheduleApplicationController {
     }
 
     private void addScheduledFlight() {
-        ScheduledFlight flight = new ScheduledFlight("", "", "");
+        ScheduledFlight flight = new ScheduledFlight("flightDesignator", "departureFlightIdent",
+                "arrivalFlightIdent");
         if (!flightScheduleDetailViewController.updateFlight(flight)) {
             return;
         }
+
+        // Add new flight to the list
+        flightList.add(flight);
+
         Db.getDatabase().addScheduledFlight(flight);
         saveDatabaseAndUpdateTable(flight);
     }
@@ -123,6 +140,24 @@ public class FlightScheduleApplicationController {
     @FXML
     protected void closeMenuAction() {
         Platform.exit();
+    }
+
+    @FXML
+    protected void appearanceMenuAction() {
+        ChoiceDialog<String> choiceDialog = new ChoiceDialog<>("Light", "Dark", "Light");
+        choiceDialog.showAndWait().ifPresent(selection -> setTheme(selection));
+    }
+
+    private void setTheme(String selection) {
+        String darkThemeUrl = getClass().getResource("/edu/au/cpsc/style/dark.css").toExternalForm();
+        String lightThemeUrl = getClass().getResource("/edu/au/cpsc/style/light.css").toExternalForm();
+        if (selection.equals("Dark")) {
+            applicationRoot.getStylesheets().add(darkThemeUrl);
+            applicationRoot.getStylesheets().remove(lightThemeUrl);
+        } else {
+            applicationRoot.getStylesheets().add(lightThemeUrl);
+            applicationRoot.getStylesheets().remove(darkThemeUrl);
+        }
     }
 
     public ScheduledFlight getScheduledFlightBeingEdited() {
