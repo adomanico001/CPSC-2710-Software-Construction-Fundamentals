@@ -27,8 +27,6 @@ necessary details, and clicking the button, a new window generates informing the
 their desired course. A "Close" button is included in the new window to easily exit from it and back to the 
 registration portal.
 
-![A screenshot of the application portal, demonstrating how the TextField controls work.] 
-(/module7/images/SampleDemonstration1.png)
+![A screenshot of the application portal, demonstrating how the TextField controls work](images%2FSampleDemonstration1.png)
 
-![A screenshot of the new window that appears after adding a new course to the Registration list.]
-(/module7/images/SampleDemonstration2.png)
+![A screenshot of the new window that appears after adding a new course to the Registration list](images%2FSampleDemonstration2.png)
