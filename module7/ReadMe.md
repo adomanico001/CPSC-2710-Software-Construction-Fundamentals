@@ -18,9 +18,10 @@ also has the ability to update entries, add new entries, and delete entries no l
 application window has opened, the user also has the option to update, add new, and delete entries from the menu bar.
 These capabilities are all currently functional.
 
-Another capability of the application is the option to change the "theme" of the application window. The user has the
-option to remain in a default "light" mode, switch to a second "light" mode designed with Auburn University's school colors, or
-a "dark" mode. Switching between these three color themes are all currently functional.
+Another capability of the application is the option to change the "theme" of the application window. This can be 
+completed from the Menu bar, by clicking "Appearance". The user has the option to remain in a default "light" mode, 
+switch to a second "light" mode designed with Auburn University's school colors, or a "dark" mode. Switching between 
+these three color themes are all currently functional.
 
 One last capability involves the user clicking onto the "Add" button within the application. After including all
 necessary details, and clicking the button, a new window generates informing the user they have successfully "registered"
