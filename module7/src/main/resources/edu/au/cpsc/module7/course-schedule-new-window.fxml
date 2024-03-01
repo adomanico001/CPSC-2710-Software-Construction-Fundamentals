@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="127.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.CourseScheduleNewWindowController">
+    <Label fx:id="messageLabel" alignment="CENTER" prefHeight="65.0" prefWidth="307.0" text="You have successfully added a new course!" />
+    <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButtonAction" prefWidth="49.0" text="Close" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets left="125.0" />
+      </VBox.margin></Button>
+</VBox>

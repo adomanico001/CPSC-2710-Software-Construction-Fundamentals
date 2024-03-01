@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="courseScheduledDetailView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.au.cpsc.module7.CourseScheduleDetailViewController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="175.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="175.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="175.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="175.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Course Code">
+            <padding>
+                <Insets left="10.0" />
+            </padding></Label>
+        <Label text="Course Name" GridPane.rowIndex="1">
+            <padding>
+                <Insets left="10.0" />
+            </padding></Label>
+        <Label text="Start Time" GridPane.rowIndex="2">
+            <padding>
+                <Insets left="10.0" />
+            </padding></Label>
+        <Label text="Days of Week" GridPane.rowIndex="3">
+            <padding>
+                <Insets left="10.0" />
+            </padding></Label>
+        <TextField fx:id="courseCodeTextField" prefHeight="26.0" prefWidth="278.0" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+        <TextField fx:id="courseNameTextField" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+        <TextField fx:id="courseStartTimeTextField" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <children>
+                <ToggleButton fx:id="sundayButton" ellipsisString="" mnemonicParsing="false" text="U" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets left="2.0" right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="mondayButton" ellipsisString="" mnemonicParsing="false" text="M" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="tuesdayButton" mnemonicParsing="false" text="T">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="wednesdayButton" mnemonicParsing="false" text="W" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="thursdayButton" mnemonicParsing="false" text="R">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="fridayButton" mnemonicParsing="false" text="F">
+               <HBox.margin>
+                  <Insets right="9.9" top="1.0" />
+               </HBox.margin></ToggleButton>
+                <ToggleButton fx:id="saturdayButton" mnemonicParsing="false" text="S">
+               <HBox.margin>
+                  <Insets top="1.0" />
+               </HBox.margin></ToggleButton>
+            </children>
+         <GridPane.margin>
+            <Insets right="2.0" top="10.0" />
+         </GridPane.margin>
+        </HBox>
+    </children>
+</GridPane>
