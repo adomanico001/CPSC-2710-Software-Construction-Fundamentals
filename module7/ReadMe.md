@@ -27,3 +27,8 @@ necessary details, and clicking the button, a new window generates informing the
 their desired course. A "Close" button is included in the new window to easily exit from it and back to the 
 registration portal.
 
+![A screenshot of the application portal, demonstrating how the TextField controls work.] 
+(https://github.com/adomanico001/CPSC2710/blob/module7/module7/images/SampleDemonstration1.png?raw=true)
+
+![A screenshot of the new window that appears after adding a new course to the Registration list.]
+(https://github.com/adomanico001/CPSC2710/blob/module7/module7/images/SampleDemonstration2.png?raw=true)
