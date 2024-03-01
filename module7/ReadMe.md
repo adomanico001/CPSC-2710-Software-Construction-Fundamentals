@@ -24,6 +24,6 @@ a "dark" mode. Switching between these three color themes are all currently func
 
 One last capability involves the user clicking onto the "Add" button within the application. After including all
 necessary details, and clicking the button, a new window generates informing the user they have successfully "registered"
-their desired course. A close button is included in the new window to easily exit from the window and back to the 
+their desired course. A "Close" button is included in the new window to easily exit from it and back to the 
 registration portal.
 
