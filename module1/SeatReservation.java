@@ -12,17 +12,19 @@ import java.time.LocalDate;
 public class SeatReservation {
     // Instance variables
     private String flightDesignator;
-<<<<<<< HEAD
+    private java.time.LocalDate flightDate;
+
+  
     private LocalDate flightDate;
+ 
     private String firstName;
     private String lastName;
-=======
+
     private java.time.LocalDate flightDate;
     private String firstName;
     private String lastName;
     private int numberOfBags;
     private boolean flyingWithInfant;
->>>>>>> 03e57147f642965c0e74606d100f7cd96e4bb51b
 
     // Getters and setters
     public String getFlightDesignator() {
@@ -30,10 +32,17 @@ public class SeatReservation {
     }
 
     public void setFlightDesignator(String flightDesignator) {
-<<<<<<< HEAD
+        if (flightDesignator == null) {
+            throw new IllegalArgumentException("flight designator cannot be null");
+        }
+
+        if (flightDesignator.length() < 4 || flightDesignator.length() > 6) {
+            throw new IllegalArgumentException("Flight designator must be 4-6 characters");
+        }
+
         if (flightDesignator.length() < 4 || flightDesignator.length() > 6) {
             throw new IllegalArgumentException("Flight Designator must have 4-6 characters.");
-        }
+        } main
         this.flightDesignator = flightDesignator;
     }
 
@@ -62,12 +71,12 @@ public class SeatReservation {
     }
 
     public String toString() {
-        return "SeatReservation{" + "flightDesignator=" + flightDesignator + ", flightDate=" +
-                flightDate + ", firstName=" + (firstName != null ? "\"" + firstName + "\"" : "null") +
-                ", lastName=" + (lastName != null ? "\"" + lastName + "\"" : "null") + '}';
+        return "SeatReservation{" + "flightDesignator=" + flightDesignator + ",flightDate=" +
+                flightDate + ",firstName=" + (firstName != null ? "\"" + firstName + "\"" : "null") +
+                ",lastName=" + (lastName != null ? "\"" + lastName + "\"" : "null") + '}';
     }
 }
-=======
+
         if (flightDesignator == null) {
             throw new IllegalArgumentException("flight designator cannot be null");
         }
@@ -118,6 +127,3 @@ public class SeatReservation {
     }
 
 }
-
-    
->>>>>>> 03e57147f642965c0e74606d100f7cd96e4bb51b
